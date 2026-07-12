@@ -1,3 +1,7 @@
+output "automation_runtime_environment_packages_id" {
+  description = "Map of id values across all automation_runtime_environment_packages, keyed the same as var.automation_runtime_environment_packages"
+  value       = { for k, v in azurerm_automation_runtime_environment_package.automation_runtime_environment_packages : k => v.id }
+}
 output "automation_runtime_environment_packages_automation_runtime_environment_id" {
   description = "Map of automation_runtime_environment_id values across all automation_runtime_environment_packages, keyed the same as var.automation_runtime_environment_packages"
   value       = { for k, v in azurerm_automation_runtime_environment_package.automation_runtime_environment_packages : k => v.automation_runtime_environment_id }
